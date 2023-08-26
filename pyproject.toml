@@ -1,0 +1,34 @@
+[project]
+name = "nlp-task"
+version = "0.0.1"
+description = "Code for kaggle problem CommonLit Readability Prize"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[tool.black]
+line-length = 119
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+line-length = 119
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+    "D1",    # Allow missing docstrings.
+    "D417",  # Don't require descriptions for all arguments.
+]
+
+[tool.ruff.isort]
+split-on-trailing-comma = false
+lines-after-imports = 2
